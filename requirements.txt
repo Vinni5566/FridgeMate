@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-dotenv
+gemini
+ultralytics
+lucid react
+react icons
+framer Motion
+react-router-dom
