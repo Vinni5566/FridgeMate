@@ -1,9 +1,5 @@
 fastapi
 uvicorn
 python-dotenv
-gemini
 ultralytics
-lucid-react
-react-icons
-framer-motion
-react-router-dom
+
