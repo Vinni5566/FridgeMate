@@ -73,7 +73,9 @@ async def detect_and_generate(file: UploadFile = File(...)):
         prompt = f"""
         You are a professional recipe generator AI.
 
-        Using ONLY these ingredients: {ingredients_list}, generate a cooking recipe.
+        Using ONLY these ingredients: {ingredients_list}, generate a creative cooking recipe that involves 
+        actual cooking steps (e.g., roasting, baking, stir-frying, steaming). Avoid salads, fruit mixes, 
+        or any recipe that simply cuts and puts ingredients in a bowl to eat raw.
 
         Output JSON ONLY. No explanation, no markdown, no text besides JSON.
 
