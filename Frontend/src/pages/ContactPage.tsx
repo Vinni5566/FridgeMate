@@ -5,7 +5,7 @@ import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import FridgeMateFooter from "../mycomponents/footer";
 import messageImg from "../assets/new-message.png"; // your messaging PNG
 
-export default function ContactPage(): JSX.Element {
+export default function ContactPage() {
   const [formData, setFormData] = useState({
     first: "",
     last: "",
@@ -30,7 +30,7 @@ export default function ContactPage(): JSX.Element {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fffdfa] to-[#fff3e8] p-6 text-gray-800">
+    <div className="min-h-screen bg-linear-to-br from-[#fffdfa] to-[#fff3e8] p-6 text-gray-800">
       <FridgeMateHeader />
 
       {/* HEADER */}
@@ -121,7 +121,7 @@ export default function ContactPage(): JSX.Element {
               type="submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm md:text-base font-semibold py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-linear-to-r from-orange-500 to-orange-600 text-white text-sm md:text-base font-semibold py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
             >
               Send Message
             </motion.button>

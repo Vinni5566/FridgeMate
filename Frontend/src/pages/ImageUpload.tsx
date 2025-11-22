@@ -5,9 +5,7 @@ import { FridgeMateHeader } from "../mycomponents/navbar";
 import {
   Upload,
   Camera,
-  ChefHat,
   Lightbulb,
-  Menu,
   Trash2,
   CheckCircle,
   XCircle,
@@ -30,7 +28,7 @@ type GalleryItem = {
   error?: string | null;
 };
 
-export default function FridgeMateDashboard(): JSX.Element {
+export default function FridgeMateDashboard() {
   // gallery of processed items
   const [gallery, setGallery] = useState<GalleryItem[]>([]);
   // currently selected item in the right panel
@@ -75,7 +73,7 @@ export default function FridgeMateDashboard(): JSX.Element {
     form.append("file", file);
     
     try {
-      const resp = await fetch("http://localhost:8000/detect_and_generate", {
+      const resp = await fetch(`${import.meta.env.BACKEND_URL}/detect_and_generate`, {
         method: "POST",
         body: form,
     });
@@ -201,11 +199,6 @@ export default function FridgeMateDashboard(): JSX.Element {
     }, "image/jpeg");
   };
 
-  // ---------- choose from gallery ----------
-  const openChooseFromGallery = () => {
-    setIsChoosingFromGallery(true);
-  };
-
   const chooseFromGallery = async (id: string) => {
     const item = gallery.find((g) => g.id === id);
     if (!item) return;
@@ -261,12 +254,7 @@ export default function FridgeMateDashboard(): JSX.Element {
     // ensure camera off
     stopCamera();
   };
-
-  // ---------- select / remove gallery ----------
-  const selectGalleryItem = (id: string) => {
-    setSelectedId(id);
-    // if item is done already, right panel will show recipe; if processing, shows progress
-  };
+  
 
   const removeGalleryItem = (id: string) => {
     setGallery((g) => {
@@ -292,7 +280,7 @@ export default function FridgeMateDashboard(): JSX.Element {
 
   // ---------- UI ----------
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fffdfa] to-[#fff6ee] p-6 flex flex-col items-center text-gray-800">
+    <div className="min-h-screen bg-linear-to-br from-[#fffdfa] to-[#fff6ee] p-6 flex flex-col items-center text-gray-800">
       {/* subtle floating orbs */}
       <motion.div
         className="pointer-events-none absolute top-8 left-8 w-56 h-56 bg-orange-200 rounded-full blur-3xl opacity-20"
@@ -356,7 +344,7 @@ export default function FridgeMateDashboard(): JSX.Element {
                   {/* prominent Scan button center */}
                   <button
                     onClick={startCamera}
-                    className="px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-400 text-white rounded-full shadow-lg transform hover:scale-105 transition"
+                    className="px-6 py-3 bg-linear-to-r from-orange-500 to-amber-400 text-white rounded-full shadow-lg transform hover:scale-105 transition"
                     title="Scan (camera)"
                   >
                     <div className="flex items-center gap-2">
@@ -367,7 +355,7 @@ export default function FridgeMateDashboard(): JSX.Element {
 
                   <button
                     onClick={() => setIsChoosingFromGallery(true)}
-                    className="px-4 py-3 bg-gradient-to-r from-orange-500 to-amber-400 text-white rounded-full shadow-lg transform hover:scale-105 transition flex items-center gap-2"
+                    className="px-4 py-3 bg-linear-to-r from-orange-500 to-amber-400 text-white rounded-full shadow-lg transform hover:scale-105 transition flex items-center gap-2"
                     title="Choose from gallery"
                   >
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg>
@@ -376,7 +364,7 @@ export default function FridgeMateDashboard(): JSX.Element {
 
                   <button
                     onClick={() => fileInputRef.current?.click()}
-                    className="px-4 py-3 bg-gradient-to-r from-orange-500 to-amber-400 text-white rounded-full shadow-lg transform hover:scale-105 transition flex items-center gap-2"
+                    className="px-4 py-3 bg-linear-to-r from-orange-500 to-amber-400 text-white rounded-full shadow-lg transform hover:scale-105 transition flex items-center gap-2"
                     title="Upload from device"
                   >
                     <Upload className="w-4 h-4" />
@@ -523,7 +511,7 @@ export default function FridgeMateDashboard(): JSX.Element {
                   </ol>
                 </div>
 
-                <button onClick={() => { setSelectedId(null); }} className="mt-3 py-2 bg-gradient-to-r from-orange-500 to-amber-400 text-white rounded-full shadow-lg transform hover:scale-105 transition">Done</button>
+                <button onClick={() => { setSelectedId(null); }} className="mt-3 py-2 bg-linear-to-r from-orange-500 to-amber-400 text-white rounded-full shadow-lg transform hover:scale-105 transition">Done</button>
               </div>
             )}
 

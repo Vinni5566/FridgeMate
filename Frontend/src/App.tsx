@@ -1,6 +1,5 @@
 // App.tsx
 // App.tsx
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import FridgeMateHome from "./pages/Home";

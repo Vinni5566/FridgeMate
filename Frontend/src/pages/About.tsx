@@ -1,4 +1,3 @@
-import React from "react";
 import { FridgeMateHeader } from "../mycomponents/navbar";
 import { motion } from "framer-motion";
 import cookImg from "../assets/cook.png";
@@ -7,7 +6,7 @@ import FridgeMateFooter from "../mycomponents/footer";
 
 export default function FridgeMateAbout() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fffdfa] to-[#fff6ee] p-6 text-gray-800">
+    <div className="min-h-screen bg-linear-to-br from-[#fffdfa] to-[#fff6ee] p-6 text-gray-800">
       <FridgeMateHeader />
 
       <div className="w-full h-64 md:h-80 bg-orange-100 rounded-3xl mt-10 mb-14

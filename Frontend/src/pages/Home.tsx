@@ -1,5 +1,4 @@
 // FridgeMateHome.tsx
-import React from "react";
 import { FridgeMateHeader } from "../mycomponents/navbar";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -19,16 +18,16 @@ import carrot from "../assets/carrot.png";
 // STEAM WEBM
 import steam from "../assets/Fumaa.webm";
 
-export default function FridgeMateHome(): JSX.Element {
+export default function FridgeMateHome() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fffdfa] to-[#fff6ee] 
+    <div className="min-h-screen bg-linear-to-br from-[#fffdfa] to-[#fff6ee] 
                     p-6 flex flex-col items-center text-gray-800 relative">
       <FridgeMateHeader />
 
       {/* FULL SCREEN BOTTOM STEAM */}
-      <div className="fixed bottom-0 left-0 w-full h-[60vh] pointer-events-none overflow-visible z-[1]">
+      <div className="fixed bottom-0 left-0 w-full h-[60vh] pointer-events-none overflow-visible z-1">
         {[
         "2%", "14%", "26%", "38%",
         "50%", "62%", "74%", "86%", "98%",
@@ -95,7 +94,7 @@ export default function FridgeMateHome(): JSX.Element {
             onClick={() => navigate("/imageUpload")}
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-10 px-12 py-4 bg-gradient-to-r from-[#ff7a1a] to-[#ff6a00]
+            className="mt-10 px-12 py-4 bg-linear-to-r from-[#ff7a1a] to-[#ff6a00]
                        text-white text-xl md:text-2xl font-semibold
                        rounded-2xl shadow-xl shadow-orange-300/40
                        hover:from-[#ff6a00] hover:to-[#e65c00]
