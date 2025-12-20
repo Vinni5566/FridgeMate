@@ -32,7 +32,7 @@ Many households struggle to decide what to cook with available ingredients, lead
 
 2. **Recipe Generation**  
    - Google Gemini LLM generates recipes based on detected ingredients.  
-   - **Prompt engineering** allows contextual customization, e.g., “I don’t have an oven” or “Only 20 minutes to cook.”  
+   - **Prompt Engineering:** Guides the LLM to generate recipes based on the **detected ingredients**, ensuring contextually relevant and creative outputs. 
 
 3. **Pipeline Optimization**  
    - Fast inference (~2 seconds) with low compute.  
